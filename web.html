@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title> Мой сайт! :) </title>
+		<style>
+			.sub-menu {height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease-in;}
+		</style>
+ 	<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	<center>
+		<H3>МГСУ</H3>
+		ИСТАС
+		<br>
+		Щедрин Владислав Александрович
+		<br>
+		ИЭУИС 4-3
+	</center>
+
+<ul class="menu">
+   <li class="menu-item">
+      <a href="#">Пункт меню 1</a>
+      <ul class="sub-menu">
+         <li>
+            <a href="#">Подпункт меню 1</a>
+         </li>
+         <li>
+            <a href="#">Подпункт меню 2</a>
+         </li>
+      <li>
+            <a href="#">Подпункт меню 3</a>
+         </li>>
+      </ul>
+   </li>
+   <li class="menu-item">
+      <a href="#">Пункт меню 2</a>
+      <ul class="sub-menu">
+         <li>
+            <a href="#">Подпункт меню 1</a>
+         </li>
+         <li>
+            <a href="#">Подпункт меню 2</a>
+         </li>
+      </ul>
+   </li>
+</ul>
+
+<script>
+	var el = document.getElementsByClassName('menu-item');
+	for(var i=0; i<el.length; i++) {
+   el[i].addEventListener("mouseenter", showSub, false);
+   el[i].addEventListener("mouseleave", hideSub, false);
+}
+function showSub(e) {
+   if(this.children.length>1) {
+      this.children[1].style.height = "auto";
+      this.children[1].style.overflow = "visible";
+      this.children[1].style.opacity = "1";
+   } else {
+      return false;
+   }
+}
+function hideSub(e) {
+    if(this.children.length>1) {
+      this.children[1].style.height = "0px";
+       this.children[1].style.overflow = "hidden";
+       this.children[1].style.opacity = "0";
+    } else {
+       return false;
+    }
+}
+
+</script>
+<div id="box1">анимированный квадрат </div>
+
+</body>
+</html>
